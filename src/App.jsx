@@ -1,7 +1,7 @@
 import './App.css'
 
 const Header = (props) => {
-  return <h1>{props.course}</h1>
+  return <h1>{props.course.name}</h1>
 }
 
 const Part = (props) => {
@@ -42,22 +42,23 @@ const Footer = (props) => {
 }
 
 const App = () => {
-  const course = 'CIT-U Bachelor of Science in Information Technology: Industry Elective'
-  
-  const parts = [
-    {
-      name: 'Fundamentals of React',
-      exercises: 10
-    },
-    {
-      name: 'Using props to pass data',
-      exercises: 7
-    },
-    {
-      name: 'State of component',
-      exercises: 14
-    }
-  ]
+  const course = {
+    name: 'CIT-U Bachelor of Science in Information Technology: Industry Elective',
+    parts: [
+      {
+        name: 'Fundamentals of React',
+        exercises: 10
+      },
+      {
+        name: 'Using props to pass data',
+        exercises: 7
+      },
+      {
+        name: 'State of component',
+        exercises: 14
+      }
+    ]
+  }
 
   const name = 'Bianca Beatriz A. ferenal'
   const courseCode = 'CSIT340'
@@ -66,8 +67,8 @@ const App = () => {
   return (
     <div>
       <Header course={course} />
-      <Content parts={parts} />
-      <Total parts={parts} />
+      <Content parts={course.parts} />
+      <Total parts={course.parts} />
       <Footer name={name} courseCode={courseCode} section={section} />
     </div>
   )
